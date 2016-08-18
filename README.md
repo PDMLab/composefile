@@ -14,7 +14,7 @@ npm install --save composefile
 const composefile = require('composefile');
 
 const options = {
-  outputfolder: __dirname,
+  outputFolder: __dirname,
   filename: 'custom-docker-compose.yml',
   services: {
     nginx: {
