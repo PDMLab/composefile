@@ -1,0 +1,38 @@
+{
+  "name": "composefile",
+  "version": "0.1.0",
+  "description": "Create dynamic Docker Compose files using Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "eslint": "./node_modules/eslint/bin/eslint.js . || true",
+    "watch": "nodemon -x 'npm run eslint --silent'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PDMLab/composefile.git"
+  },
+  "keywords": [
+    "Docker",
+    "Compose"
+  ],
+  "author": "Alexander Zeitler <alexander.zeitler@pdmlab.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PDMLab/composefile/issues"
+  },
+  "homepage": "https://github.com/PDMLab/composefile#readme",
+  "engine": "node >= 4.0.0",
+  "devDependencies": {
+    "async": "^2.0.1",
+    "eslint": "^2.13.1",
+    "eslint-config-es": "^0.6.10",
+    "eslint-plugin-extended": "^0.2.0",
+    "eslint-plugin-mocha": "^3.0.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "parser-yaml": "^0.1.1",
+    "write-yaml": "^0.2.2"
+  }
+}

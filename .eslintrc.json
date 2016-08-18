@@ -1,0 +1,9 @@
+{
+  "extends": "es/2015/server",
+  "rules": {
+    "no-restricted-syntax": [
+      0,
+      "ClassDeclaration"
+    ]
+  }
+}
