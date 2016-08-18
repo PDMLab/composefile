@@ -14,9 +14,9 @@ npm install --save composefile
 const composefile = require('composefile');
 
 const options = {
-  outputfolder : __dirname,
+  outputfolder: __dirname,
   filename: 'custom-docker-compose.yml',
-  services : {
+  services: {
     nginx: {
       image: 'nginx:latest',
       ports: [ '8080:8080' ]
@@ -24,6 +24,16 @@ const options = {
     app: {
       build: '../app',
       ports: [ '80:80' ]
+    }
+  },
+  networks: {
+    outside: {
+      external: true
+    }
+  },
+  volumes: {
+    data: {
+      external: true
     }
   }
 };
@@ -46,6 +56,12 @@ services:
     build: ../app
     ports:
       - '80:80'
+networks:
+  outside:
+    external: true
+volumes:
+  data:
+    external: true
 ```
 
 ## Running the tests

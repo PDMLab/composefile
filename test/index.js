@@ -57,6 +57,40 @@ describe('Compose file', () => {
     });
   });
 
+  describe('When being created with networks', () => {
+    it('should contain networks', done => {
+      const networks = {
+        outside: {
+          external: true
+        }
+      };
+
+      composeFile({ outputFolder: __dirname, networks }, err => { // eslint-disable-line
+        yamlParser.parseFile(path.join(__dirname, 'docker-compose.yml'), (errParse, yaml) => {
+          assert.equal(yaml.networks.outside.external, true);
+          done(errParse);
+        });
+      });
+    });
+  });
+
+  describe('When being created with volumes', () => {
+    it('should contain volumes', done => {
+      const volumes = {
+        data: {
+          external: true
+        }
+      };
+
+      composeFile({ outputFolder: __dirname, volumes }, err => { // eslint-disable-line
+        yamlParser.parseFile(path.join(__dirname, 'docker-compose.yml'), (errParse, yaml) => {
+          assert.equal(yaml.volumes.data.external, true);
+          done(errParse);
+        });
+      });
+    });
+  });
+
   describe('When being created with custom filename', () => {
     it('should be created at custom filename', done => {
       composeFile({ outputFolder: __dirname, filename: 'custom-docker-compose.yml' }, err => { // eslint-disable-line
