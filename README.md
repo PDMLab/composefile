@@ -28,7 +28,7 @@ const options = {
   }
 }
 
-composeFile(options, err => { console.log('done'); };
+composefile(options, err => { console.log('done'); };
 ```
 
 `options.filename` is optional and defaults to `docker-compose.yml`.
