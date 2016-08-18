@@ -1,6 +1,6 @@
-# composefile - Create dynamic Docker Compose files using Node.js
+# Create dynamic Docker Compose files using Node.js
 
-`composefile` allows you to create Docker Compose (version 2) files (named `docker-compose.yml` by default) dynamically using Node.js.
+`composefile` allows you to create [Docker Compose](https://docs.docker.com/compose/) (version 2) files (named `docker-compose.yml` by default) dynamically using Node.js.
 
 ## Installation
 
@@ -11,10 +11,10 @@ npm install --save composefile
 ## Usage
 
 ```js
-const composefile = require('composefile`);
+const composefile = require('composefile');
 
 const options = {
-  outputPath = __dirname,
+  outputPath : __dirname,
   filename: 'custom-docker-compose.yml',
   services : {
     nginx: {
@@ -25,7 +25,7 @@ const options = {
       build: '../app',
       ports: [ '80:80' ]
     }
-  };
+  }
 }
 
 composeFile(options, err => { console.log('done'); };
